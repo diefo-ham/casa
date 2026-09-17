@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi casa es tu casa — Puebla</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --glaze:#ECEDE6;
+  --panel:#F9F9F5;
+  --cobalt:#14369B;
+  --cobalt-deep:#0C2168;
+  --amber:#C9941A;
+  --verde:#2F6B4E;
+  --naranja:#B8512A;
+  --ink:#23262C;
+  --ink-soft:#5A5F68;
+  --rule:rgba(20,54,155,.20);
+  --tile:#14369B;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --glaze:#0E1428;
+    --panel:#161E38;
+    --cobalt:#93AEF2;
+    --cobalt-deep:#C3D2FA;
+    --amber:#E2B44B;
+    --verde:#6FB48F;
+    --naranja:#E28B63;
+    --ink:#E8E8DF;
+    --ink-soft:#A3AAC0;
+    --rule:rgba(147,174,242,.28);
+    --tile:#4E6FD0;
+  }
+}
+:root[data-theme="dark"]{
+  --glaze:#0E1428;
+  --panel:#161E38;
+  --cobalt:#93AEF2;
+  --cobalt-deep:#C3D2FA;
+  --amber:#E2B44B;
+  --verde:#6FB48F;
+  --naranja:#E28B63;
+  --ink:#E8E8DF;
+  --ink-soft:#A3AAC0;
+  --rule:rgba(147,174,242,.28);
+  --tile:#4E6FD0;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--glaze);
+  color:var(--ink);
+  font-family:"Atkinson Hyperlegible","Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:17px;
+  line-height:1.62;
+}
+.wrap{max-width:53rem;margin:0 auto;padding:0 1.25rem 5rem}
+
+h1,h2,h3{font-family:"Fraunces","Iowan Old Style",Georgia,serif;font-weight:600;line-height:1.12;letter-spacing:-.01em}
+h1{font-size:clamp(2.3rem,7vw,3.9rem);margin:0;color:var(--cobalt-deep)}
+h2{font-size:clamp(1.45rem,3.6vw,2rem);margin:0 0 .15rem;color:var(--cobalt-deep)}
+h3{font-size:1.1rem;margin:2.2rem 0 .6rem;color:var(--ink)}
+p{margin:0 0 1rem;max-width:62ch}
+
+/* ---------- portada ---------- */
+.hero{padding:3.2rem 0 1.6rem;display:grid;grid-template-columns:1fr;gap:1.6rem;align-items:center}
+@media(min-width:720px){.hero{grid-template-columns:1fr 12rem;padding-top:4.4rem}}
+.hero svg{width:9rem;height:9rem;justify-self:start}
+@media(min-width:720px){.hero svg{width:12rem;height:12rem}}
+.kicker{font-size:1.06rem;color:var(--ink-soft);margin:.9rem 0 0;max-width:46ch}
+.facts{display:flex;flex-wrap:wrap;gap:.45rem;margin:1.3rem 0 0;padding:0;list-style:none}
+.facts li{
+  font-size:.85rem;padding:.26rem .7rem;border:1px solid var(--rule);
+  border-radius:999px;color:var(--cobalt);background:var(--panel)
+}
+
+.band{height:44px;margin:2.6rem 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  background-repeat:repeat-x;background-position:center;background-size:auto 44px}
+
+/* ---------- escaleta ---------- */
+.escaleta{width:100%;border-collapse:collapse;font-size:.94rem;margin:.4rem 0 0}
+.escaleta th{text-align:left;font-weight:700;font-size:.82rem;color:var(--ink-soft);
+  border-bottom:1px solid var(--rule);padding:.35rem .5rem .35rem 0}
+.escaleta td{padding:.42rem .5rem .42rem 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.escaleta td:first-child{color:var(--cobalt);font-variant-numeric:tabular-nums;white-space:nowrap}
+.escaleta td:last-child{color:var(--ink-soft)}
+
+/* ---------- guión ---------- */
+.acto{margin:3.2rem 0 0}
+.acto>.meta{font-size:.86rem;color:var(--ink-soft);margin:.1rem 0 1.5rem}
+.cue{
+  display:grid;grid-template-columns:1fr;gap:.2rem .9rem;
+  padding:.95rem 0;border-top:1px solid var(--rule)
+}
+@media(min-width:660px){.cue{grid-template-columns:9.5rem 1fr;gap:0 1.4rem}}
+.who{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:1rem;color:var(--cobalt);line-height:1.3}
+.who span{display:block;font-family:"Atkinson Hyperlegible",sans-serif;font-weight:400;
+  font-size:.78rem;color:var(--ink-soft);margin-top:.1rem}
+.line{max-width:60ch;font-size:1.06rem}
+.line p{margin:0 0 .7rem}
+.line p:last-child{margin-bottom:0}
+.accion{
+  font-style:italic;color:var(--verde);font-size:.92rem;
+  border-left:2px solid var(--verde);padding-left:.75rem;margin:.55rem 0 0;max-width:56ch
+}
+
+/* ---------- kahoot ---------- */
+.q{background:var(--panel);border:1px solid var(--rule);border-radius:3px;padding:1rem 1.1rem;margin:0 0 .85rem}
+.q>h4{margin:0 0 .6rem;font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:1.02rem;color:var(--ink)}
+.q ol{margin:0;padding-left:1.3rem}
+.q li{margin:.15rem 0}
+.q li.ok{color:var(--verde);font-weight:700}
+.dato{margin:.7rem 0 0;font-size:.9rem;color:var(--ink-soft);font-style:italic}
+
+/* ---------- anexos ---------- */
+.nota{background:var(--panel);border:1px solid var(--rule);border-left:3px solid var(--amber);
+  padding:1rem 1.15rem;margin:1.2rem 0;border-radius:2px}
+.nota p:last-child{margin-bottom:0}
+.cols{display:grid;grid-template-columns:1fr;gap:1.6rem}
+@media(min-width:660px){.cols{grid-template-columns:1fr 1fr}}
+ul.check{list-style:none;padding:0;margin:0;font-size:.97rem}
+ul.check li{padding:.28rem 0 .28rem 1.4rem;position:relative;border-bottom:1px solid var(--rule)}
+ul.check li::before{content:"";position:absolute;left:0;top:.82em;width:.5rem;height:.5rem;
+  background:var(--tile);transform:rotate(45deg)}
+.rub{width:100%;border-collapse:collapse;font-size:.93rem}
+.rub th{text-align:left;font-size:.8rem;color:var(--ink-soft);border-bottom:1px solid var(--rule);padding:.35rem .5rem .35rem 0}
+.rub td{padding:.4rem .5rem;border-bottom:1px solid var(--rule);vertical-align:top}
+.rub td:first-child{padding-left:0}
+.rub td:last-child{text-align:right;color:var(--cobalt);font-variant-numeric:tabular-nums;white-space:nowrap;padding-right:0}
+
+.scrollx{overflow-x:auto}
+footer{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--rule);
+  font-size:.86rem;color:var(--ink-soft)}
+
+@media print{
+  body{background:#fff;color:#000;font-size:11.5pt}
+  .band{display:none}
+  .hero{padding-top:0}
+  .cue{break-inside:avoid;page-break-inside:avoid}
+  .q{break-inside:avoid;page-break-inside:avoid;background:#fff}
+  .acto{break-before:auto}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="roseta">
+      <circle cx="60" cy="60" r="7" fill="currentColor"/>
+      <g fill="none" stroke="currentColor" stroke-width="3">
+        <circle cx="60" cy="60" r="15"/>
+        <circle cx="60" cy="60" r="34"/>
+      </g>
+      <g fill="currentColor">
+        <ellipse cx="60" cy="36" rx="5.5" ry="12"/>
+        <ellipse cx="60" cy="84" rx="5.5" ry="12"/>
+        <ellipse cx="36" cy="60" rx="12" ry="5.5"/>
+        <ellipse cx="84" cy="60" rx="12" ry="5.5"/>
+        <ellipse cx="43" cy="43" rx="4.5" ry="9.5" transform="rotate(45 43 43)"/>
+        <ellipse cx="77" cy="77" rx="4.5" ry="9.5" transform="rotate(45 77 77)"/>
+        <ellipse cx="77" cy="43" rx="4.5" ry="9.5" transform="rotate(-45 77 43)"/>
+        <ellipse cx="43" cy="77" rx="4.5" ry="9.5" transform="rotate(-45 43 77)"/>
+      </g>
+      <g fill="none" stroke="currentColor" stroke-width="2.4">
+        <path d="M6 6 q18 0 18 18 M114 6 q-18 0 -18 18 M6 114 q18 0 18 -18 M114 114 q-18 0 -18 -18"/>
+        <rect x="4" y="4" width="112" height="112"/>
+      </g>
+    </g>
+  </defs>
+</svg>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div>
+      <h1>Mi casa es tu casa</h1>
+      <p class="kicker">Guión del recorrido poblano: talavera en la mesa, flautas en el plato y un Kahoot de postre.</p>
+      <ul class="facts">
+        <li>12 voces</li>
+        <li>10 minutos</li>
+        <li>Puebla</li>
+        <li>Talavera</li>
+        <li>Flautas doradas</li>
+      </ul>
+    </div>
+    <svg viewBox="0 0 120 120" role="img" aria-label="Azulejo de talavera" style="color:var(--tile)">
+      <use href="#roseta"/>
+    </svg>
+  </header>
+
+  <div class="band" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22 viewBox=%220 0 120 120%22><g fill=%22none%22 stroke=%22%2314369B%22 stroke-width=%223%22><circle cx=%2260%22 cy=%2260%22 r=%2216%22/><circle cx=%2260%22 cy=%2260%22 r=%2236%22/><path d=%22M60 8 v16 M60 96 v16 M8 60 h16 M96 60 h16%22/></g><circle cx=%2260%22 cy=%2260%22 r=%227%22 fill=%22%2314369B%22/></svg>')"></div>
+
+  <section>
+    <h2>Cómo leer este guión</h2>
+    <p>Cada bloque trae el tiempo en que debe empezar. A la izquierda está quién habla y qué papel juega; a la derecha, lo que dice. Las líneas en verde son indicaciones: no se dicen, se hacen.</p>
+    <p>Nadie lee de una hoja frente al público. Aprendan su parte, y sobre todo aprendan la <em>última frase</em> del compañero que va antes: esa es su entrada.</p>
+
+    <h3>Escaleta</h3>
+    <div class="scrollx">
+    <table class="escaleta">
+      <thead><tr><th>Tiempo</th><th>Bloque</th><th>Quiénes</th></tr></thead>
+      <tbody>
+        <tr><td>0:00 – 1:00</td><td>Recepción: la casa abre</td><td>1, 2</td></tr>
+        <tr><td>1:00 – 2:15</td><td>De dónde viene la talavera</td><td>3, 4</td></tr>
+        <tr><td>2:15 – 3:55</td><td>Cómo se hace</td><td>5, 6, 7</td></tr>
+        <tr><td>3:55 – 4:35</td><td>Una ciudad vestida de talavera</td><td>8</td></tr>
+        <tr><td>4:35 – 5:35</td><td>La talavera hoy y su huella</td><td>9, 10</td></tr>
+        <tr><td>5:35 – 6:55</td><td>A la mesa: flautas doradas</td><td>11, 12, 1</td></tr>
+        <tr><td>6:55 – 9:20</td><td>Kahoot</td><td>7, 5, 2</td></tr>
+        <tr><td>9:20 – 10:00</td><td>Cierre</td><td>3, 6, 8, 10, 12, 1</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <div class="band" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22 viewBox=%220 0 120 120%22><g fill=%22none%22 stroke=%22%2314369B%22 stroke-width=%223%22><circle cx=%2260%22 cy=%2260%22 r=%2216%22/><circle cx=%2260%22 cy=%2260%22 r=%2236%22/><path d=%22M60 8 v16 M60 96 v16 M8 60 h16 M96 60 h16%22/></g><circle cx=%2260%22 cy=%2260%22 r=%227%22 fill=%22%2314369B%22/></svg>')"></div>
+
+  <!-- ACTO 1 -->
+  <section class="acto">
+    <h2>1 · La casa abre</h2>
+    <p class="meta">0:00 – 1:00 · Los anfitriones reciben a los jueces en la entrada del stand, no adentro.</p>
+
+    <div class="cue">
+      <div class="who">Integrante 1<span>Anfitrión</span></div>
+      <div class="line">
+        <p>Buenas tardes. Bienvenidos a Puebla: pasen, que aquí ya los estábamos esperando. ¿Mesa para cuántos? Tomen su menú, por favor… aunque les advierto que en esta casa el menú no se come: se recorre.</p>
+        <p class="accion">Entrega a cada juez un “menú” de cartón reciclado con el orden del recorrido y el código QR del Kahoot impreso al reverso.</p>
+      </div>
+    </div>
+
+    <div class="cue">
+      <div class="who">Integrante 2<span>Anfitrión</span></div>
+      <div class="line">
+        <p>Nuestra casa sirve tres tiempos. De entrada, el barro que hizo famosa a Puebla: la talavera. De plato fuerte, unas flautas doradas recién salidas del aceite. Y de postre, un reto, porque al final van a tener que demostrar cuánto aprendieron. Síganme: la cocina está por aquí.</p>
+        <p class="accion">Conduce al grupo hacia la mesa de la artesanía. Aquí arranca la música de fondo, bajita.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTO 2 -->
+  <section class="acto">
+    <h2>2 · De dónde viene la talavera</h2>
+    <p class="meta">1:00 – 2:15 · Origen e historia. Con una pieza de talavera en las manos desde la primera palabra.</p>
+
+    <div class="cue">
+      <div class="who">Integrante 3<span>Historia</span></div>
+      <div class="line">
+        <p>Puebla se fundó en 1531 sobre un valle que tenía algo más valioso que el oro: barro. Durante ese mismo siglo llegaron alfareros de un pueblo español llamado Talavera de la Reina, y de ahí tomó su nombre esta cerámica. Para 1653, los loceros de Puebla ya tenían ordenanzas propias: reglas escritas para que nadie pudiera vender una pieza mal hecha.</p>
+      </div>
+    </div>
+
+    <div class="cue">
+      <div class="who">Integrante 4<span>Historia</span></div>
+      <div class="line">
+        <p>Pero la talavera no es española. Miren bien esta pieza. La geometría viene de la tradición árabe que España heredó. El azul sobre blanco es hijo de la porcelana china que llegaba a Acapulco en la Nao de China. Y el barro, y las manos que lo amasaron, son de aquí.</p>
+        <p>Tres continentes en un solo plato. Eso es lo que están sosteniendo.</p>
+        <p class="accion">Pasa la pieza a los jueces. No la suelta hasta que alguien la tome con las dos manos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTO 3 -->
+  <section class="acto">
+    <h2>3 · Cómo se hace</h2>
+    <p class="meta">2:15 – 3:55 · Materiales, herramientas y proceso. Es el bloque con más puntos de la rúbrica: aquí se demuestra, no se cuenta.</p>
+
+    <div class="cue">
+      <div class="who">Integrante 5<span>Barro</span></div>
+      <div class="line">
+        <p>Todo empieza con dos barros: uno negro, de Tecali, y uno blanco, de Totimehuacán. Se mezclan, se lavan y se dejan reposar durante meses, hasta que el barro “se pudre” —así le dicen los maestros— y queda dócil. Apenas entonces sube al torno.</p>
+        <p class="accion">Descubre la charola con barro crudo e invita a los jueces a tocarlo. Mientras hablan los siguientes, la charola se queda a la mano.</p>
+      </div>
+    </div>
+
+    <div class="cue">
+      <div class="who">Integrante 6<span>Horno</span></div>
+      <div class="line">
+        <p>La pieza formada seca al aire casi tres semanas y entra al horno a unos 850 grados. Sale color ladrillo, y ahí se sumerge en un esmalte de estaño: ese es el blanco que todos reconocen. Después se pinta a mano, y vuelve al fuego a más de mil grados.</p>
+        <p>De principio a fin, un solo plato tarda entre tres y cuatro meses.</p>
+        <p class="accion">Señala la maqueta del proceso —barro, pieza cruda, pieza esmaltada, pieza terminada— conforme menciona cada etapa.</p>
+      </div>
+    </div>
+
+    <div class="cue">
+      <div class="who">Integrante 7<span>Pintura</span></div>
+      <div class="line">
+        <p>La paleta tradicional tiene apenas seis colores: azul, amarillo, negro, verde, naranja y malva. El azul es cobalto, el más caro de todos, y lleva tanto mineral que al cocerse queda ligeramente elevado sobre la superficie.</p>
+        <p>Así que hagan la prueba: cierren los ojos y pasen el dedo por encima. Si el azul se siente, es talavera de verdad.</p>
+        <p class="accion">Acerca la pieza para que la toquen. Esta es la parte que la gente recuerda; no la apresuren.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTO 4 -->
+  <section class="acto">
+    <h2>4 · Una ciudad vestida de talavera</h2>
+    <p class="meta">3:55 – 4:35 · Identidad. Al hablar, señalen las fotos del panel.</p>
+
+    <div class="cue">
+      <div class="who">Integrante 8<span>Identidad</span></div>
+      <div class="line">
+        <p>Puebla quedó tan orgullosa de su cerámica que se la puso encima: está en las cúpulas de las iglesias, en la Casa del Alfeñique, en las fachadas de todo el centro. En el Barrio de la Luz todavía trabajan los talleres, y el de Uriarte lleva abierto desde 1824.</p>
+        <p>Desde 1997 solo cuatro municipios del país pueden llamarle talavera a lo que hacen. Y en 2019, la UNESCO declaró este oficio Patrimonio Cultural Inmaterial de la Humanidad, compartido con España.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTO 5 -->
+  <section class="acto">
+    <h2>5 · La talavera hoy y su huella</h2>
+    <p class="meta">4:35 – 5:35 · Vigencia, tecnología y sostenibilidad.</p>
+
+    <div class="cue">
+      <div class="who">Integrante 9<span>Hoy</span></div>
+      <div class="line">
+        <p>Y sigue viva. Hoy sus diseños viajan en tenis, en telas, en muros de restaurantes y en catálogos que se venden en línea a medio mundo. Cuando una pieza está certificada, trae un holograma pegado: es la firma del taller que la hizo.</p>
+        <p>En esta pantalla pueden ver el proceso completo, de barro a plato, en un minuto.</p>
+        <p class="accion">Arranca el video en la tablet. Va en bucle y sin audio, para no competir con las voces.</p>
+      </div>
+    </div>
+
+    <div class="cue">
+      <div class="who">Integrante 10<span>Sostenibilidad</span></div>
+      <div class="line">
+        <p>Es además un oficio que cuida su casa: el barro que sobra se reintegra a la masa, el agua se decanta y se vuelve a usar, los hornos pasaron de leña a gas y las vajillas se esmaltan sin plomo para que sean seguras.</p>
+        <p>Nosotros seguimos la misma idea. Todo lo que ven aquí —los azulejos, los marcos, el mantel— está hecho con cartón, periódico y PET recuperados. Ni un solo material comprado nuevo para decorar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTO 6 -->
+  <section class="acto">
+    <h2>6 · A la mesa</h2>
+    <p class="meta">5:35 – 6:55 · Gastronomía. El plato se sirve mientras se habla, no después.</p>
+
+    <div class="cue">
+      <div class="who">Integrante 11<span>Cocina</span></div>
+      <div class="line">
+        <p>De la vajilla, al plato. Lo que tienen enfrente son flautas doradas, y el nombre no es adorno: se llaman así porque la tortilla enrollada y frita queda larga y delgada, igual que el instrumento. La base es maíz nixtamalizado.</p>
+      </div>
+    </div>
+
+    <div class="cue">
+      <div class="who">Integrante 12<span>Cocina</span></div>
+      <div class="line">
+        <p>Nixtamalizar es una técnica prehispánica: el maíz se cuece con cal, reposa y se muele. Y no es solo cuestión de sabor —ese proceso libera calcio y vitaminas que el grano crudo no entrega.</p>
+        <p>Cada flauta que se van a comer empieza, en realidad, hace tres mil años.</p>
+      </div>
+    </div>
+
+    <div class="cue">
+      <div class="who">Integrante 1<span>Anfitrión</span></div>
+      <div class="line">
+        <p>Y seremos honestos: la flauta no nació en Puebla. Pero en Puebla se viste de fiesta. Las nuestras van bañadas en mole poblano, ese que —cuenta la leyenda— nació en el convento de Santa Rosa cuando una monja molió chiles, especias y chocolate para recibir a un virrey.</p>
+        <p>Sírvanse, por favor. Van en plato de talavera, por supuesto.</p>
+        <p class="accion">Sirven dos integrantes en silencio mientras el anfitrión habla. Servilleta de tela, no de papel.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="band" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22 viewBox=%220 0 120 120%22><g fill=%22none%22 stroke=%22%2314369B%22 stroke-width=%223%22><circle cx=%2260%22 cy=%2260%22 r=%2216%22/><circle cx=%2260%22 cy=%2260%22 r=%2236%22/><path d=%22M60 8 v16 M60 96 v16 M8 60 h16 M96 60 h16%22/></g><circle cx=%2260%22 cy=%2260%22 r=%227%22 fill=%22%2314369B%22/></svg>')"></div>
+
+  <!-- ACTO 7 -->
+  <section class="acto">
+    <h2>7 · El postre: Kahoot</h2>
+    <p class="meta">6:55 – 9:20 · Cinco preguntas, 20 segundos cada una. Todas las respuestas ya se dijeron en voz alta.</p>
+
+    <div class="cue">
+      <div class="who">Integrante 7<span>Conduce</span></div>
+      <div class="line">
+        <p>Ahora sí, el postre. Escaneen el código QR del menú y escriban su nombre. Son cinco preguntas, veinte segundos cada una, y todo lo que necesitan saber ya lo dijimos en los últimos siete minutos. Quien gane se lleva un azulejo pintado a mano por nosotros.</p>
+        <p class="accion">Esperen a que todos aparezcan en la pantalla antes de lanzar la primera. Si el internet falla, el Integrante 5 lee las preguntas en voz alta y los jueces levantan una tarjeta de color.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <h4>1 · ¿De dónde viene el nombre “talavera”?</h4>
+      <ol type="A">
+        <li>De una palabra náhuatl que significa barro fino</li>
+        <li class="ok">De Talavera de la Reina, un pueblo de España</li>
+        <li>Del apellido del primer alfarero de Puebla</li>
+        <li>Del tipo de horno que se usaba</li>
+      </ol>
+      <p class="dato">Dato para leer al revelar: los alfareros llegaron en el siglo XVI y trajeron el nombre con ellos.</p>
+    </div>
+
+    <div class="q">
+      <h4>2 · ¿Cuántos colores tiene la paleta tradicional de la talavera?</h4>
+      <ol type="A">
+        <li>3</li>
+        <li class="ok">6</li>
+        <li>12</li>
+        <li>Todos los que quiera el pintor</li>
+      </ol>
+      <p class="dato">Dato: azul, amarillo, negro, verde, naranja y malva. Ni uno más.</p>
+    </div>
+
+    <div class="q">
+      <h4>3 · ¿Cuánto tarda en hacerse una pieza de talavera, de principio a fin?</h4>
+      <ol type="A">
+        <li>Tres días</li>
+        <li>Tres semanas</li>
+        <li class="ok">Entre tres y cuatro meses</li>
+        <li>Más de dos años</li>
+      </ol>
+      <p class="dato">Dato: solo el reposo del barro se lleva varias semanas, antes de que alguien lo toque.</p>
+    </div>
+
+    <div class="q">
+      <h4>4 · ¿En qué año la UNESCO reconoció la talavera como Patrimonio Cultural Inmaterial?</h4>
+      <ol type="A">
+        <li>1997</li>
+        <li>2005</li>
+        <li class="ok">2019</li>
+        <li>2021</li>
+      </ol>
+      <p class="dato">Dato: 1997 también es buena respuesta para otra cosa —ese año llegó la denominación de origen.</p>
+    </div>
+
+    <div class="q">
+      <h4>5 · ¿Por qué se llaman “flautas”?</h4>
+      <ol type="A">
+        <li>Por el crujido que hacen al morderse</li>
+        <li class="ok">Por su forma larga y delgada, como el instrumento</li>
+        <li>Porque se comían en las fiestas con música</li>
+        <li>Por el nombre del cocinero que las inventó</li>
+      </ol>
+      <p class="dato">Dato: y el maíz que las sostiene lleva tres mil años nixtamalizándose igual.</p>
+    </div>
+
+    <div class="cue">
+      <div class="who">Integrante 2<span>Cierra el juego</span></div>
+      <div class="line">
+        <p>Un aplauso para quien va arriba en la tabla. Aquí está su azulejo… y aquí está el consuelo para los demás: pueden repetir flauta.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTO 8 -->
+  <section class="acto">
+    <h2>8 · Cierre</h2>
+    <p class="meta">9:20 – 10:00 · Seis voces, una frase cada una. Van de pie, en semicírculo, sin interrupciones.</p>
+
+    <div class="cue">
+      <div class="who">Integrante 3</div>
+      <div class="line"><p>La talavera es un objeto que no existía antes: nació el día en que tres culturas tuvieron que compartir el mismo taller.</p></div>
+    </div>
+    <div class="cue">
+      <div class="who">Integrante 6</div>
+      <div class="line"><p>La flauta hace lo mismo en la cocina: maíz antiguo, una técnica sencilla y un sabor que cada casa cambia a su gusto.</p></div>
+    </div>
+    <div class="cue">
+      <div class="who">Integrante 8</div>
+      <div class="line"><p>Las dos se hacen igual: con las manos, con tiempo y con paciencia.</p></div>
+    </div>
+    <div class="cue">
+      <div class="who">Integrante 10</div>
+      <div class="line"><p>Y las dos se heredan. Nadie aprende a pintar cobalto ni a enrollar una tortilla leyendo un manual.</p></div>
+    </div>
+    <div class="cue">
+      <div class="who">Integrante 12</div>
+      <div class="line"><p>Por eso los invitamos a llevarse algo más que la degustación: llévense la curiosidad.</p></div>
+    </div>
+    <div class="cue">
+      <div class="who">Integrante 1</div>
+      <div class="line">
+        <p>Gracias por sentarse a nuestra mesa. En esta casa siempre va a haber un lugar para ustedes.</p>
+        <p class="accion">Todos, juntos: “¡Mi casa es tu casa!”</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="band" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22 viewBox=%220 0 120 120%22><g fill=%22none%22 stroke=%22%2314369B%22 stroke-width=%223%22><circle cx=%2260%22 cy=%2260%22 r=%2216%22/><circle cx=%2260%22 cy=%2260%22 r=%2236%22/><path d=%22M60 8 v16 M60 96 v16 M8 60 h16 M96 60 h16%22/></g><circle cx=%2260%22 cy=%2260%22 r=%227%22 fill=%22%2314369B%22/></svg>')"></div>
+
+  <section>
+    <h2>Anexos</h2>
+
+    <div class="nota">
+      <p><strong>Dos decisiones que tomé y pueden cambiar.</strong> Elegí la <strong>talavera</strong> como artesanía del estado: es la única cerámica mexicana con denominación de origen y reconocimiento de la UNESCO, se explica bien en voz alta y se puede imitar en cartón para la decoración. Y para el vínculo cultural del platillo, las flautas van <strong>bañadas en mole poblano</strong>, porque la flauta sola no es un platillo poblano y la rúbrica pide justificar ese vínculo.</p>
+      <p>Si prefieren servirlas con salsa verde y crema, cambien la línea del Integrante 1 en el bloque 6 por: <em>“Y seremos honestos: la flauta no nació en Puebla. Pero el maíz que la sostiene se ha comido en este valle desde antes de que Puebla tuviera nombre. Sírvanse, por favor: van en plato de talavera, por supuesto.”</em></p>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>Utilería</h3>
+        <ul class="check">
+          <li>Una pieza de talavera real (la del azul elevado)</li>
+          <li>Charola con barro crudo para tocar</li>
+          <li>Maqueta de cuatro etapas del proceso</li>
+          <li>Azulejos de cartón pintados a mano</li>
+          <li>Menús de cartón con QR al reverso</li>
+          <li>Tablet con el video del taller, en bucle y sin audio</li>
+          <li>Panel de fotos: cúpulas, Casa del Alfeñique, Barrio de la Luz</li>
+          <li>Platos y servilletas de tela para la degustación</li>
+          <li>Tarjetas de colores, por si falla el internet</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Ensayo</h3>
+        <ul class="check">
+          <li>Cronometren de corrido: el límite real es 10:00</li>
+          <li>Si se pasan, recorten el bloque 5, nunca el 3</li>
+          <li>Memoricen la última frase de quien va antes</li>
+          <li>Hablen a los jueces, no a la pieza</li>
+          <li>Prueben el QR con datos móviles, no con el wifi de la escuela</li>
+          <li>El Kahoot corre con temporizador de 20 segundos</li>
+          <li>Quien sirve, sirve callado</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Dónde suma cada bloque</h3>
+    <div class="scrollx">
+    <table class="rub">
+      <thead><tr><th>Criterio</th><th>Se gana en</th><th>Pts</th></tr></thead>
+      <tbody>
+        <tr><td>Creatividad y decoración</td><td>Recepción tipo restaurante, azulejos y menús</td><td>20</td></tr>
+        <tr><td>Artesanía representativa</td><td>Bloques 2, 3 y 4</td><td>20</td></tr>
+        <tr><td>Contexto cultural e histórico</td><td>Bloques 2 y 4</td><td>15</td></tr>
+        <tr><td>Proceso de elaboración</td><td>Bloque 3, con maqueta y barro crudo</td><td>10</td></tr>
+        <tr><td>Interactividad</td><td>Tocar el barro, sentir el azul, Kahoot</td><td>10</td></tr>
+        <tr><td>Gastronomía típica</td><td>Bloque 6, servido en talavera</td><td>10</td></tr>
+        <tr><td>Materiales reciclados</td><td>Bloque 5, dicho en voz alta</td><td>5</td></tr>
+        <tr><td>Integración tecnológica</td><td>QR, video en bucle, Kahoot</td><td>5</td></tr>
+        <tr><td>Trabajo en equipo</td><td>12 roles fijos y relevos ensayados</td><td>5</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <footer>
+    <p>Mi casa es tu casa · Puebla · 12 integrantes · 10 minutos</p>
+  </footer>
+
+</div>
+</body>
+</html>
